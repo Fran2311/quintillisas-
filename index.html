@@ -8,96 +8,145 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
       display: flex;
-      flex-direction: column;
       height: 100vh;
     }
 
-    .principal {
-      flex: 1;
-      display: flex;
-    }
-
-    .grupo-logo {
-      flex: 2;
+    .left-section {
+      flex: 3;
       position: relative;
       background: url('imagenes/grupal.png') center/cover no-repeat;
       display: flex;
-      align-items: flex-end;
       justify-content: center;
+      align-items: center;
     }
 
-    .grupo-logo img {
-      width: 200px;
-      margin-bottom: 20px;
-      animation: fadeIn 1.5s ease;
-      background-color: rgba(255, 255, 255, 0.7);
-      padding: 10px;
+    .logo-box {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: rgba(255,255,255,0.8);
+      padding: 20px;
       border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
-    .quintillizas {
+    .logo-box img {
+      width: 160px;
+    }
+
+    .right-section {
       flex: 1.2;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
-      gap: 15px;
-      padding: 20px 0;
+      align-items: stretch;
+      padding: 10px;
+      background: linear-gradient(to bottom, #f8bbd0, #fce4ec);
     }
 
-    .quintillizas img {
-      width: 90px;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    .card {
+      position: relative;
+      margin: 10px 0;
+      border-radius: 10px;
+      overflow: hidden;
       cursor: pointer;
       transition: transform 0.3s ease;
     }
 
-    .quintillizas img:hover {
-      transform: scale(1.1);
+    .card:hover {
+      transform: scale(1.03);
     }
 
-    .footer {
-      height: 80px;
-      text-align: center;
-      background: #ec407a;
+    .card img {
+      width: 100%;
+      height: 100px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .card:hover::before {
+      opacity: 0;
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 8px;
+      left: 12px;
       color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      text-shadow: 1px 1px 3px black;
+      z-index: 2;
+    }
+
+    /* Colores por quintilliza */
+    .ichika::before { background-color: rgba(255, 235, 59, 0.4); }
+    .nino::before { background-color: rgba(255, 105, 180, 0.4); }
+    .miku::before { background-color: rgba(100, 181, 246, 0.4); }
+    .yotsuba::before { background-color: rgba(255, 167, 38, 0.4); }
+    .itsuki::before { background-color: rgba(239, 83, 80, 0.4); }
+
+    .footer {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 60px;
+      background-color: #ec407a;
+      color: white;
+      text-align: center;
+      line-height: 60px;
       font-size: 1.1rem;
-      line-height: 80px;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
 
     .footer:hover {
-      background: #d81b60;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
+      background-color: #d81b60;
     }
   </style>
 </head>
 <body>
 
-  <div class="principal">
-    <div class="grupo-logo">
+  <div class="left-section">
+    <div class="logo-box">
       <img src="imagenes/logo.png" alt="Logo Las Quintillizas">
-    </div>
-
-    <div class="quintillizas">
-      <img src="imagenes/ichika.jpg" alt="Ichika" onclick="location.href='main.html#ichika'">
-      <img src="imagenes/nino.jpg" alt="Nino" onclick="location.href='main.html#nino'">
-      <img src="imagenes/miku.jpg" alt="Miku" onclick="location.href='main.html#miku'">
-      <img src="imagenes/yotsuba.jpg" alt="Yotsuba" onclick="location.href='main.html#yotsuba'">
-      <img src="imagenes/itsuki.jpg" alt="Itsuki" onclick="location.href='main.html#itsuki'">
     </div>
   </div>
 
-  <div class="footer" onclick="location.href='proyecto.html'">
-    🌸 Ver Todo el Universo Nakano: Canciones, Capítulos, Temporadas →
+  <div class="right-section">
+    <div class="card ichika" onclick="location.href='ichika.html'">
+      <img src="imagenes/ichika.jpg" alt="Ichika">
+      <div class="overlay-text">Ichika</div>
+    </div>
+    <div class="card nino" onclick="location.href='nino.html'">
+      <img src="imagenes/nino.jpg" alt="Nino">
+      <div class="overlay-text">Nino</div>
+    </div>
+    <div class="card miku" onclick="location.href='miku.html'">
+      <img src="imagenes/miku.jpg" alt="Miku">
+      <div class="overlay-text">Miku</div>
+    </div>
+    <div class="card yotsuba" onclick="location.href='yotsuba.html'">
+      <img src="imagenes/yotsuba.jpg" alt="Yotsuba">
+      <div class="overlay-text">Yotsuba</div>
+    </div>
+    <div class="card itsuki" onclick="location.href='itsuki.html'">
+      <img src="imagenes/itsuki.jpg" alt="Itsuki">
+      <div class="overlay-text">Itsuki</div>
+    </div>
+    <div class="footer" onclick="location.href='proyecto.html'">
+      🌸 Todo sobre el anime, canciones y capítulos →
+    </div>
   </div>
 
 </body>
