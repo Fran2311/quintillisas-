@@ -1,95 +1,88 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fafafa;
-  color: #333;
+  display: flex;
+  height: 100vh;
+  background-color: #ffffff; /* fondo blanco */
 }
 
-/* ZONA IZQUIERDA */
+/* Zona de logo e imagen grupal */
 .left-zone {
-  width: 30%;
-  float: left;
-  background-color: #f8bbd0;
-  padding: 40px;
-  box-sizing: border-box;
-  text-align: center;
+  flex: 2.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
 }
 
 .logo {
-  width: 160px;
-  margin-bottom: 30px;
+  width: 180px;
+  background-color: rgba(255,255,255,0.9);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
 .grupal {
-  width: 100%;
-  max-width: 240px;
+  max-width: 85%;
   border-radius: 12px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
-/* ZONA DERECHA */
+/* Zona de columnas de quintillizas + general */
 .right-zone {
-  width: 70%;
-  float: left;
-  padding: 40px;
-  box-sizing: border-box;
-  background-color: #fff;
+  flex: 5.8;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
 }
 
-/* COLUMNAS VISUALES */
 .column {
+  flex: 1;
   position: relative;
-  width: 200px;
-  height: 280px;
-  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s;
-}
-
-.column:hover {
-  transform: scale(1.05);
 }
 
 .column img {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.column:hover img {
+  transform: scale(1.02);
+}
+
+.column::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 1;
+  transition: opacity 0.4s ease;
+}
+
+.column:hover::before {
+  opacity: 0;
 }
 
 .overlay-text {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  top: 10px;
+  left: 12px;
   color: white;
-  text-align: center;
-  padding: 12px 0;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  text-shadow: 1px 1px 3px black;
+  z-index: 2;
 }
 
-/* BORDES POR PERSONAJE */
-.ichika  { border: 3px solid #fce68f; }
-.nino    { border: 3px solid #f48fb1; }
-.miku    { border: 3px solid #90caf9; }
-.yotsuba { border: 3px solid #a5d6a7; }
-.itsuki  { border: 3px solid #ef9a9a; }
-.general { border: 3px solid #ce93d8; }
-
-/* RESPONSIVO */
-@media screen and (max-width: 768px) {
-  .left-zone, .right-zone {
-    width: 100%;
-    float: none;
-  }
-  .column {
-    width: 45%;
-    height: 240px;
-  }
-}
+/* Overlays de color */
+.ichika::before   { background-color: rgba(255, 235, 59, 0.4); }
+.nino::before     { background-color: rgba(255, 105, 180, 0.4); }
+.miku::before     { background-color: rgba(100, 181, 246, 0.4); }
+.yotsuba::before  { background-color: rgba(255, 167, 38, 0.4); }
+.itsuki::before   { background-color: rgba(239, 83, 80, 0.4); }
+.general::before  { background-color: rgba(156, 39, 176, 0.35); }
