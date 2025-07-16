@@ -1,82 +1,118 @@
 /* === Intro screen === */
-body.intro-screen {
+body {
   margin: 0;
-  height: 100vh;
-  background: radial-gradient(circle, #fce4ec, #f8bbd0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.logo {
-  width: 300px;
-  margin-bottom: 30px;
-  animation: fadeIn 2s ease forwards;
-}
-.entrar-btn {
-  padding: 15px 30px;
-  font-size: 1.2rem;
-  border: none;
-  border-radius: 10px;
-  background-color: #ec407a;
-  color: white;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.entrar-btn:hover {
-  background-color: #d81b60;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.9); }
-  to { opacity: 1; transform: scale(1); }
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
 }
 
-/* === Main screen === */
-body.main-screen {
-  margin: 0;
-  background: url('imagenes/grupal.png') center/cover no-repeat;
+/* === Pantalla principal (main.html) === */
+.main-container {
+  display: flex;
   height: 100vh;
-  display: flex;
 }
-.grid-container {
+
+.visual-side {
+  flex: 3;
   display: flex;
-  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
+  padding: 20px;
 }
+
+.logo-box img {
+  width: 180px;
+  background-color: rgba(255,255,255,0.85);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.grupal-box img {
+  max-width: 90%;
+  border-radius: 14px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* === Selector de quintillizas === */
+.character-side {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  padding: 10px;
+  background: linear-gradient(to bottom, #f8bbd0, #fce4ec);
+}
+
 .card {
   position: relative;
-  flex: 1;
+  margin: 10px 0;
+  border-radius: 10px;
   overflow: hidden;
   cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+.card:hover {
+  transform: scale(1.03);
+}
+
 .card img {
   width: 100%;
-  height: 100%;
+  height: 100px;
   object-fit: cover;
   display: block;
 }
-.overlay {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  color: white;
-  font-size: 1.5rem;
-  text-shadow: 1px 1px 4px black;
-  z-index: 2;
-}
+
 .card::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  transition: opacity 0.4s ease;
   z-index: 1;
+  transition: opacity 0.4s ease;
 }
 
-/* === Colores por personaje === */
-.card.ichika::before   { background-color: rgba(255, 235, 59, 0.4); }
-.card.nino::before     { background-color: rgba(255, 105, 180, 0.4); }
-.card.miku::before     { background-color: rgba(100, 181, 246, 0.4); }
-.card.yotsuba::before  { background-color: rgba(255, 167, 38, 0.4); }
-.card.itsuki::before   { background-color: rgba(239, 83, 80, 0.4); }
+/* Hover: ocultar overlay */
+.card:hover::before {
+  opacity: 0;
+}
 
-.card:hover::before { opacity: 0; }
+/* Texto encima de cada imagen */
+.overlay-text {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px black;
+  z-index: 2;
+}
+
+/* Overlays de color por personaje */
+.ichika::before   { background-color: rgba(255, 235, 59, 0.4); }
+.nino::before     { background-color: rgba(255, 105, 180, 0.4); }
+.miku::before     { background-color: rgba(100, 181, 246, 0.4); }
+.yotsuba::before  { background-color: rgba(255, 167, 38, 0.4); }
+.itsuki::before   { background-color: rgba(239, 83, 80, 0.4); }
+
+/* === Botón de acceso al proyecto === */
+.footer {
+  height: 50px;
+  background-color: #ec407a;
+  color: white;
+  text-align: center;
+  line-height: 50px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.footer:hover {
+  background-color: #d81b60;
+}
