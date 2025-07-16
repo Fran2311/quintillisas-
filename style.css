@@ -5,13 +5,14 @@ body {
   color: #333;
 }
 
+/* Zona izquierda con logo y imagen grupal */
 .left-zone {
   width: 30%;
   float: left;
   background-color: #f8bbd0;
   padding: 40px;
-  text-align: center;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .logo {
@@ -26,27 +27,29 @@ body {
   box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
+/* Zona derecha con columnas */
 .right-zone {
   width: 70%;
   float: left;
+  box-sizing: border-box;
   padding: 40px;
+  background-color: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
-  box-sizing: border-box;
-  background-color: #fff;
 }
 
+/* Tarjetas individuales de personaje */
 .column {
   position: relative;
   width: 200px;
   height: 280px;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
 .column:hover {
@@ -64,13 +67,14 @@ body {
   bottom: 0;
   width: 100%;
   background: rgba(0,0,0,0.6);
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 10px 0;
   font-size: 1.1rem;
   font-weight: bold;
 }
 
+/* Colores temáticos por personaje */
 .ichika  { border: 3px solid #fce68f; }
 .nino    { border: 3px solid #f48fb1; }
 .miku    { border: 3px solid #90caf9; }
@@ -78,6 +82,7 @@ body {
 .itsuki  { border: 3px solid #ef9a9a; }
 .general { border: 3px solid #ce93d8; }
 
+/* Adaptación para móviles */
 @media screen and (max-width: 768px) {
   .left-zone, .right-zone {
     width: 100%;
@@ -86,5 +91,11 @@ body {
   .column {
     width: 45%;
     height: 240px;
+  }
+  .logo {
+    width: 140px;
+  }
+  .grupal {
+    max-width: 220px;
   }
 }
