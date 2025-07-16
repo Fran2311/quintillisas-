@@ -1,43 +1,38 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-}
-
-/* === Estructura principal === */
-body {
   display: flex;
   height: 100vh;
+  background-color: #ffffff; /* fondo blanco */
 }
 
-/* === Zona izquierda: Logo y imagen grupal === */
+/* Zona de logo e imagen grupal */
 .left-zone {
-  flex: 2.5;
+  flex: 2.2;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
-  background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
   padding: 20px;
 }
 
-.left-zone img.logo {
+.logo {
   width: 180px;
-  background-color: rgba(255,255,255,0.85);
+  background-color: rgba(255,255,255,0.9);
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-.left-zone img.grupal {
-  max-width: 90%;
+.grupal {
+  max-width: 85%;
   border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
 }
 
-/* === Zona derecha: Columnas verticales por quintilliza === */
+/* Zona de columnas de quintillizas + general */
 .right-zone {
-  flex: 4;
+  flex: 5.8;
   display: flex;
 }
 
@@ -69,12 +64,10 @@ body {
   transition: opacity 0.4s ease;
 }
 
-/* Efecto hover: quita el overlay */
 .column:hover::before {
   opacity: 0;
 }
 
-/* Texto encima de cada imagen */
 .overlay-text {
   position: absolute;
   top: 10px;
@@ -86,9 +79,10 @@ body {
   z-index: 2;
 }
 
-/* === Overlays personalizados por personaje === */
+/* Overlays de color */
 .ichika::before   { background-color: rgba(255, 235, 59, 0.4); }
 .nino::before     { background-color: rgba(255, 105, 180, 0.4); }
 .miku::before     { background-color: rgba(100, 181, 246, 0.4); }
 .yotsuba::before  { background-color: rgba(255, 167, 38, 0.4); }
 .itsuki::before   { background-color: rgba(239, 83, 80, 0.4); }
+.general::before  { background-color: rgba(156, 39, 176, 0.35); }
