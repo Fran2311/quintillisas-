@@ -4,11 +4,98 @@
   <meta charset="UTF-8">
   <title>Las Quintillizas por Excelencia</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .header {
+      display: flex;
+      flex: 1;
+      background: #fce4ec;
+    }
+
+    .logo-section {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: url('imagenes/grupal.png') center/cover no-repeat;
+      position: relative;
+    }
+
+    .logo-section img {
+      width: 200px;
+      margin-top: 20px;
+      animation: fadeIn 2s ease;
+      background-color: rgba(255, 255, 255, 0.7);
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .characters {
+      flex: 1.3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background: linear-gradient(to bottom, #f8bbd0, #fce4ec);
+    }
+
+    .characters img {
+      width: 80px;
+      height: auto;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .characters img:hover {
+      transform: scale(1.1);
+    }
+
+    .footer {
+      height: 80px;
+      text-align: center;
+      background: #ec407a;
+      color: white;
+      font-size: 1.2rem;
+      line-height: 80px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
 </head>
-<body class="intro-screen">
-  <div class="intro-content">
-    <img src="imagenes/logo.png" alt="Logo Las Quintillizas" class="logo">
-    <button onclick="location.href='main.html'" class="entrar-btn">Entrar</button>
+<body>
+
+  <div class="header">
+    <div class="logo-section">
+      <!-- Imagen grupal como fondo -->
+      <img src="imagenes/logo.png" alt="Logo Las Quintillizas">
+    </div>
+
+    <div class="characters">
+      <img src="imagenes/ichika.jpg" alt="Ichika" onclick="location.href='main.html#ichika'">
+      <img src="imagenes/nino.jpg" alt="Nino" onclick="location.href='main.html#nino'">
+      <img src="imagenes/miku.jpg" alt="Miku" onclick="location.href='main.html#miku'">
+      <img src="imagenes/yotsuba.jpg" alt="Yotsuba" onclick="location.href='main.html#yotsuba'">
+      <img src="imagenes/itsuki.jpg" alt="Itsuki" onclick="location.href='main.html#itsuki'">
+    </div>
   </div>
+
+  <div class="footer" onclick="location.href='proyecto.html'">
+    🌸 Ver Todo el Universo Nakano (Canciones, Capítulos, Temporadas) →
+  </div>
+
 </body>
 </html>
