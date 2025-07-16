@@ -81,11 +81,11 @@ ul {
 
 .column {
   position: relative;
-  width: 200px;
-  height: 300px;
-  border-radius: 10px;
+  width: 220px;
+  height: 320px;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -112,20 +112,20 @@ ul {
   font-weight: bold;
 }
 
-/* ───────── ESTILO POR COLOR ───────── */
+/* ───────── BORDES POR PERSONAJE ───────── */
 
-.ichika { border: 3px solid #ce93d8; }
-.nino   { border: 3px solid #f48fb1; }
-.miku   { border: 3px solid #90caf9; }
-.yotsuba{ border: 3px solid #ffcc80; }
-.itsuki { border: 3px solid #ef9a9a; }
-.general{ border: 3px solid #c5e1a5; }
+.ichika  { border: 3px solid #fce68f; }   /* Amarillo pastel */
+.nino    { border: 3px solid #f48fb1; }   /* Rosa intenso */
+.miku    { border: 3px solid #90caf9; }   /* Azul cielo */
+.yotsuba { border: 3px solid #a5d6a7; }   /* Verde claro */
+.itsuki  { border: 3px solid #ef9a9a; }   /* Rojo coral */
+.general { border: 3px solid #ce93d8; }   /* Violeta suave */
 
 /* ───────── RESPONSIVE ───────── */
 
 @media screen and (max-width: 768px) {
   .column {
     width: 45%;
-    height: 240px;
+    height: 260px;
   }
 }
