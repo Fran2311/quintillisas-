@@ -1,3 +1,5 @@
+/* ───────── GENERAL ───────── */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
@@ -31,6 +33,8 @@ ul {
   padding-left: 20px;
 }
 
+/* ───────── BLOQUES DE LETRA ───────── */
+
 .box-japan {
   background-color: #fce4ec;
   padding: 15px;
@@ -45,6 +49,8 @@ ul {
   margin-bottom: 20px;
 }
 
+/* ───────── BOTÓN ───────── */
+
 .volver-btn {
   margin-top: 40px;
   padding: 12px 30px;
@@ -58,4 +64,68 @@ ul {
 
 .volver-btn:hover {
   background-color: #ad1457;
+}
+
+/* ───────── COLUMNAS DE MENÚ ───────── */
+
+.right-zone {
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 24px;
+  background-color: #fff;
+}
+
+.column {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.column:hover {
+  transform: scale(1.05);
+}
+
+.column img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* ───────── ESTILO POR COLOR ───────── */
+
+.ichika { border: 3px solid #ce93d8; }
+.nino   { border: 3px solid #f48fb1; }
+.miku   { border: 3px solid #90caf9; }
+.yotsuba{ border: 3px solid #ffcc80; }
+.itsuki { border: 3px solid #ef9a9a; }
+.general{ border: 3px solid #c5e1a5; }
+
+/* ───────── RESPONSIVE ───────── */
+
+@media screen and (max-width: 768px) {
+  .column {
+    width: 45%;
+    height: 240px;
+  }
 }
