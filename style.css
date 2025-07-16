@@ -5,68 +5,33 @@ body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #fafafa;
   color: #333;
+}
+
+/* ───────── ZONA IZQUIERDA ───────── */
+
+.left-zone {
+  width: 30%;
+  background-color: #f8bbd0;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  font-size: 2.8rem;
-  color: #d81b60;
-  margin-bottom: 20px;
+.logo {
+  width: 180px;
+  margin-bottom: 30px;
 }
 
-h2 {
-  margin-top: 40px;
-  color: #ad1457;
+.grupal {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
 }
 
-h3 {
-  margin-top: 30px;
-  color: #c2185b;
-}
-
-p, li {
-  line-height: 1.6;
-  font-size: 1.05rem;
-}
-
-ul {
-  padding-left: 20px;
-}
-
-/* ───────── BLOQUES DE LETRA ───────── */
-
-.box-japan {
-  background-color: #fce4ec;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-.box-trad {
-  background-color: #fff8e1;
-  padding: 15px;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-/* ───────── BOTÓN ───────── */
-
-.volver-btn {
-  margin-top: 40px;
-  padding: 12px 30px;
-  background-color: #d81b60;
-  color: white;
-  font-size: 1rem;
-  border-radius: 8px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.volver-btn:hover {
-  background-color: #ad1457;
-}
-
-/* ───────── COLUMNAS DE MENÚ ───────── */
+/* ───────── ZONA DERECHA ───────── */
 
 .right-zone {
   width: 70%;
@@ -75,17 +40,19 @@ ul {
   justify-content: center;
   align-items: center;
   padding: 40px;
-  gap: 24px;
+  gap: 30px;
   background-color: #fff;
 }
+
+/* ───────── COLUMNAS INDIVIDUALES ───────── */
 
 .column {
   position: relative;
   width: 220px;
   height: 320px;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -107,12 +74,12 @@ ul {
   background: rgba(0,0,0,0.6);
   color: white;
   text-align: center;
-  padding: 10px 0;
-  font-size: 1.1rem;
+  padding: 12px 0;
+  font-size: 1.2rem;
   font-weight: bold;
 }
 
-/* ───────── BORDES POR PERSONAJE ───────── */
+/* ───────── COLORES POR PERSONAJE ───────── */
 
 .ichika  { border: 3px solid #fce68f; }   /* Amarillo pastel */
 .nino    { border: 3px solid #f48fb1; }   /* Rosa intenso */
@@ -124,8 +91,20 @@ ul {
 /* ───────── RESPONSIVE ───────── */
 
 @media screen and (max-width: 768px) {
+  .left-zone, .right-zone {
+    width: 100%;
+  }
+
   .column {
     width: 45%;
     height: 260px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+
+  .grupal {
+    max-width: 220px;
   }
 }
