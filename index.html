@@ -4,93 +4,6 @@
   <meta charset="UTF-8">
   <title>Las Quintillizas por Excelencia</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      display: flex;
-      height: 100vh;
-    }
-
-    .left-zone {
-      flex: 2.5;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
-      padding: 20px;
-    }
-
-    .left-zone img.logo {
-      width: 180px;
-      background-color: rgba(255,255,255,0.85);
-      padding: 10px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
-
-    .left-zone img.grupal {
-      max-width: 90%;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.2);
-    }
-
-    .right-zone {
-      flex: 4;
-      display: flex;
-    }
-
-    .column {
-      flex: 1;
-      position: relative;
-      overflow: hidden;
-      cursor: pointer;
-    }
-
-    .column img {
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    .column:hover img {
-      transform: scale(1.02);
-    }
-
-    .column::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      z-index: 1;
-      transition: opacity 0.4s ease;
-    }
-
-    .column:hover::before {
-      opacity: 0;
-    }
-
-    .overlay-text {
-      position: absolute;
-      top: 10px;
-      left: 12px;
-      color: white;
-      font-size: 1.4rem;
-      font-weight: bold;
-      text-shadow: 1px 1px 3px black;
-      z-index: 2;
-    }
-
-    /* Overlay de color para cada quintilliza */
-    .ichika::before { background-color: rgba(255, 235, 59, 0.4); }
-    .nino::before   { background-color: rgba(255, 105, 180, 0.4); }
-    .miku::before   { background-color: rgba(100, 181, 246, 0.4); }
-    .yotsuba::before{ background-color: rgba(255, 167, 38, 0.4); }
-    .itsuki::before { background-color: rgba(239, 83, 80, 0.4); }
-  </style>
 </head>
 <body>
 
@@ -119,6 +32,10 @@
     <div class="column itsuki" onclick="location.href='itsuki.html'">
       <img src="imagenes/itsuki.jpg" alt="Itsuki">
       <div class="overlay-text">Itsuki</div>
+    </div>
+    <div class="column general" onclick="location.href='proyecto.html'">
+      <img src="imagenes/general.png" alt="Información general">
+      <div class="overlay-text">Universo Nakano</div>
     </div>
   </div>
 
