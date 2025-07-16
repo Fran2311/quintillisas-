@@ -7,14 +7,11 @@ body {
 
 .left-zone {
   width: 30%;
+  float: left;
   background-color: #f8bbd0;
   padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  float: left;
-  height: 100vh;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -32,25 +29,24 @@ body {
 .right-zone {
   width: 70%;
   float: left;
+  padding: 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  padding: 40px;
-  gap: 20px;
+  gap: 24px;
   box-sizing: border-box;
   background-color: #fff;
 }
 
 .column {
   position: relative;
-  width: 180px;
-  height: 260px;
+  width: 200px;
+  height: 280px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
   cursor: pointer;
-  transition: transform 0.2s;
+  transition: transform 0.3s;
 }
 
 .column:hover {
@@ -68,9 +64,27 @@ body {
   bottom: 0;
   width: 100%;
   background: rgba(0,0,0,0.6);
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 10px 0;
   font-size: 1.1rem;
   font-weight: bold;
+}
+
+.ichika  { border: 3px solid #fce68f; }
+.nino    { border: 3px solid #f48fb1; }
+.miku    { border: 3px solid #90caf9; }
+.yotsuba { border: 3px solid #a5d6a7; }
+.itsuki  { border: 3px solid #ef9a9a; }
+.general { border: 3px solid #ce93d8; }
+
+@media screen and (max-width: 768px) {
+  .left-zone, .right-zone {
+    width: 100%;
+    float: none;
+  }
+  .column {
+    width: 45%;
+    height: 240px;
+  }
 }
